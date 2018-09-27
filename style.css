@@ -46,6 +46,7 @@ body {
 			padding: 0;
 			font-size: 100%;
 			zoom: 1;
+      background: #8f8f8f url(images/background-mobile.jpg) top center no-repeat;
 		}
 		#wrap {
 			width: 100%;
@@ -165,7 +166,6 @@ a img {
   -webkit-transition: left .3s ease-out;
   transition: left .3s ease-out;
   float: left;
-	background: #8f8f8f url(images/background.jpg) top center no-repeat;
 }
 #page-wrapper.mobile-menu-open {
   left: 300px;
@@ -206,12 +206,12 @@ a img {
   padding-right: 15px;
 }
 #mobile-menu .mobile-menu > ul > li {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #e26d38;
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
 #mobile-menu .mobile-menu li {
-  line-height: 1.75em;
+  line-height: 2em;
   overflow: hidden;
 }
 
@@ -241,7 +241,7 @@ a img {
   color: #e26d38;
   opacity: .6;
   width: 1em;
-  height: 1.75em;
+  height: 2em;
   margin-right: .5em;
   -webkit-transition: all .2s ease-out;
   transition: all .2s ease-out;
@@ -829,6 +829,7 @@ a img {
 			width: 100%;
 			margin: 0;
 		}
+    /* Home page Slider Styles */
     #homepagetop table > tbody > tr:nth-child(2n-1), #homepagetop table > tbody > tr > td:nth-child(2n-1) { display:none; }
     #homepagetop table > tbody > tr,
     #homepagetop table > tbody > tr > td:nth-child(2n),
@@ -837,6 +838,19 @@ a img {
     #homepagetop table > tbody > tr > td:nth-child(2n) li,
     #homepagetop table > tbody > tr > td:nth-child(2n) a,
     #homepagetop table > tbody > tr > td:nth-child(2n) img { max-width: 100% !important; }
+
+    .hpproductdev {
+    	background: url(images/productdev-mobile.png) top no-repeat;
+      background-size: 300px;
+    }
+    .hpproductsol {
+    	background: url(images/productsolutions-mobile.png) top no-repeat;
+      background-size: 300px;
+    }
+    .hpscalemodels {
+    	background: url(images/processimprovements-mobile.png) top no-repeat;
+      background-size: 300px;
+    }
 	}
 
 /************************************************
@@ -1175,9 +1189,9 @@ img.alignleft {
 			width: 100%;
 			margin: 0;
 			padding: 0;
-      margin-bottom: 6em;
+      margin-bottom: 0;
+      font-size: .8em;
       line-height: 1.3em;
-      color: #e9e9e9;
 		}
 		#content #contentleft {
 			width: 100%:

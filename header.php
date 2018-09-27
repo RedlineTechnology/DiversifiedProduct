@@ -63,7 +63,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 <div id="mobile-menu" class="mobilenav">
   <form id="searchform" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
    <input type="text" value="Search this website..." name="s" id="searchbox" onfocus="if (this.value == 'Search this website...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search this website...';}" />
