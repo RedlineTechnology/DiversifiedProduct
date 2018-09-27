@@ -6,15 +6,18 @@
 <meta name="distribution" content="global" />
 <meta name="robots" content="follow, all" />
 <meta name="language" content="en" />
+<meta name="viewport" content="width=device-width">
 
 <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 <link rel="Shortcut Icon" href="<?php echo get_settings('home'); ?>/wp-content/themes/diversified/images/favicon.ico" type="image/x-icon" />
 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); echo '?' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" media="screen" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 <?php wp_enqueue_script("jquery"); ?>
 <?php wp_head(); ?>
@@ -61,12 +64,19 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 </head>
 
 <body>
+<div id="mobile-menu" class="mobilenav">
+  <form id="searchform" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+   <input type="text" value="Search this website..." name="s" id="searchbox" onfocus="if (this.value == 'Search this website...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search this website...';}" />
+   <input type="submit" id="searchbutton" value="GO" />
+  </form>
+  <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'mobile-menu' ) ); ?>
+</div>
 
+<div id="page-wrapper">
 <div id="wrap">
 <div id="header">
 
 	<div class="headerleft"><a href="<?php echo get_settings('home'); ?>"><img src="<?php echo get_settings('home'); ?>/wp-content/uploads/2017/04/lwhead.png" border="0"></a></div>
-
 
 	<!--To define the 468x60 ad, go to your WP dashboard and go to Appearance -> Diversified Product Development Options and enter the ad code.-->
 
@@ -88,6 +98,9 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 <div id="navbar">
 
 	<div id="navbarleft">
+    <div id="toggle-menu-container">
+      <i id="toggle-menu" class="fas fa-bars"></i>
+    </div>
 		<ul id="nav">
 			<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu-header' ) ); ?>
 		</ul>

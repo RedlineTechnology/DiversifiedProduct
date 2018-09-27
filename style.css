@@ -2,7 +2,7 @@
 	Theme Name: Diversified Product
 	Theme URL: http://www.diversifiedproduct.com
 	Description: Diversified Product theme is a 3-column Widget-ready theme created for WordPress based on the Revolution Church theme.
-	Author: Jeremy Ferguson
+	Author: Jeremy Ferguson. Modified by Jason Subers
 	Author URI: http://www.redlinetechnology.com
 	Version: 2.0
 	Tags: three columns, fixed width, white, gray, black, red, sidebar widgets
@@ -12,7 +12,7 @@
 
 	Changelog:
 		v1.0 - 11.02.09
-		v2.0 - 09.20.18
+		v2.0 - 09.27.18
 */
 
 html, body {
@@ -65,22 +65,19 @@ body {
 *	Hyperlinks									*
 ************************************************/
 
-a, a:visited {
-	color: #7a1315;
+a, a:link, a:visited {
+	color: #e26d38;
 	text-decoration: none;
 	}
 
-a:hover {
-	color: #7a1315;
+a:hover, a:focus, a:active {
+	color: #e26d38;
 	text-decoration: underline;
+  outline: none;
 	}
 
 a img {
 	border: none;
-	}
-
-a:focus, a:hover, a:active {
-	outline: none
 	}
 
 /************************************************
@@ -149,7 +146,7 @@ a:focus, a:hover, a:active {
   z-index: 200; /* Stay on top */
   top: 0;
   left: -300px;
-  background-color: #f6f6f6;
+  background-color: #111111;
   border-right: 1px solid $light;
   overflow-x: hidden; /* Disable horizontal scroll */
   -webkit-transition: left 0.3s ease-out;
@@ -195,6 +192,89 @@ a:focus, a:hover, a:active {
 	.mobilenav, #toggle-menu-container {
 		display: block;
 	}
+}
+
+#mobile-menu .mobile-menu {
+  float: left;
+  width: 100%;
+}
+#mobile-menu .mobile-menu ul {
+  list-style: none;
+  padding-left: 15px;
+}
+#mobile-menu .mobile-menu > ul {
+  padding-right: 15px;
+}
+#mobile-menu .mobile-menu > ul > li {
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+#mobile-menu .mobile-menu li {
+  line-height: 1.75em;
+  overflow: hidden;
+}
+
+#mobile-menu a, #mobile-menu a:link, #mobile-menu a:visited {
+  color: #e9e9e9;
+}
+.menu-item-has-children.open > a, .menu-item-has-children.open > a:link, .menu-item-has-children.open > a:visited,
+#mobile-menu a:hover, #mobile-menu a:focus, #mobile-menu a:active {
+  color: #e26d38 !important;
+}
+
+#mobile-menu .mobile-menu li.menu-item-has-children {
+  position: relative;
+}
+/* this is the down arrow indicating a sub-menu */
+#mobile-menu .mobile-menu li.menu-item-has-children:after {
+  display: block;
+  position: absolute;
+  z-index: 91;
+  top: 0;
+  right: 0;
+  font-family: FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: normal normal normal $menu-size/1 FontAwesome;
+  content:"\f078" !important;
+  color: #e26d38;
+  opacity: .6;
+  width: 1em;
+  height: 1.75em;
+  margin-right: .5em;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#mobile-menu .mobile-menu li.open.menu-item-has-children:after {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  opacity: 1;
+}
+#mobile-menu .mobile-menu li a {
+  float: left;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#mobile-menu .sub-menu {
+  float: left;
+  position: relative;
+  margin-bottom: -180%;
+  -webkit-transition: margin-bottom .5s ease-out;
+  transition: margin-bottom .5s ease-out;
+  visibility: visible;
+  opacity: 1;
+  z-index: -2;
+  width: 100%;
+}
+#mobile-menu .sub-menu.open {
+  margin-bottom: 0;
+  visibility: visible;
+  opacity: 1;
+  z-index: 99;
 }
 
 /************************************************
@@ -335,7 +415,6 @@ a:focus, a:hover, a:active {
 }
 
 #nav ul {
-	float: left;
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
@@ -343,7 +422,7 @@ a:focus, a:hover, a:active {
 	}
 
 #nav li {
-	float: left;
+  display: inline-block;
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
@@ -354,19 +433,15 @@ a:focus, a:hover, a:active {
 #nav li a, #nav li a:link, #nav li a:visited {
 	color: #FFFFFF;
 	display: block;
-	font-size: 1.3em;
+	font-size: 1.4em;
 	font-family:  Arial, Tahoma, Verdana;
 	font-weight: bold;
     margin: 0px;
-	padding: 12px 8px 12px 8px;
+	padding: 12px 20px;
 	z-index: 1000;
 	}
 
 #nav li a:hover, #nav li a:active {
-	/* background: #555555 url(images/navhov.png); */
-	color: #FFFFFF;
-    margin: 0px;
-	padding: 12px 8px 12px 8px;
 	text-decoration: none;
 	z-index: 1000;
 	}
@@ -584,28 +659,23 @@ a:focus, a:hover, a:active {
 			float: left;
 		}
 		.headerleft a { display: block; }
-		.headerleft img { width: 100%; }
+		.headerleft img {
+      width: 100%;
+      max-width: 200px;
+      margin-top: 10px !important;
+    }
 		.headerright {
-			text-align: right;
-			width: 100%;
-			margin: 15px 15px 0 0;
+			display: none;
 		}
 		.headerright table { display: none; }
-		.headerright input {
-			padding: 15px !important;
-			border-radius: 5px;
-			border: none !important;
-			font-size: 1em !important;
-		}
 		#navbar {
 			width: 100%;
-			/* height: 15px; */
-			height: auto; /**/
-			background: #111111; /**/
+			height: 15px;
+			background: #111111;
 			margin: 0;
 			float: left;
 		}
-		#menu-mainmenu { position: relative; top: -35px; } /**/
+    #nav { display: none; }
 		#navbarleft {
 			width: 100%;
 		}
@@ -655,9 +725,10 @@ a:focus, a:hover, a:active {
 	/* background: #FFFFFF url(images/homepagetop.gif) top no-repeat; */
 	float: left;
 	width: 960px;
-	height: 320px;
+	height: 0;
 	margin: 15px 0px 0px 30px;
 	padding: 0px;
+  padding-bottom: 35%;
 	/* border: 1px solid #DDDDDD; */
 	}
 
@@ -758,13 +829,14 @@ a:focus, a:hover, a:active {
 			width: 100%;
 			margin: 0;
 		}
-		#homepagetop table, #homepagetop tbody, #homepagetop tr {
-			width: auto;
-			position: absolute;
-			height: auto;
-			left: 50%;
-			margin-left: -150px;
-		}
+    #homepagetop table > tbody > tr:nth-child(2n-1), #homepagetop table > tbody > tr > td:nth-child(2n-1) { display:none; }
+    #homepagetop table > tbody > tr,
+    #homepagetop table > tbody > tr > td:nth-child(2n),
+    #homepagetop table > tbody > tr > td:nth-child(2n) div,
+    #homepagetop table > tbody > tr > td:nth-child(2n) ul,
+    #homepagetop table > tbody > tr > td:nth-child(2n) li,
+    #homepagetop table > tbody > tr > td:nth-child(2n) a,
+    #homepagetop table > tbody > tr > td:nth-child(2n) img { max-width: 100% !important; }
 	}
 
 /************************************************
@@ -813,6 +885,7 @@ a:focus, a:hover, a:active {
 	font-weight: normal;
 	margin: 0px 0px 0px 0px;
 	padding: 10px 0px 10px 10px;
+  line-height: 1.5em;
 	}
 
 #content h3 {
@@ -1081,23 +1154,30 @@ img.alignleft {
 	}
 
 	@media all and (max-width: 50em) {
-		#content { width: 100%; margin: 0; padding: 0; text-align: center; }
+		#content { width: 100%; margin: 0; padding: 0 0 40px 0; text-align: center; }
 		#content > div {
 			width: 100% !important;
 			margin: 10px 0;
 		}
 		#content > div > div {
 			width: 100%; text-align: center;
-			padding: 49px 40px 0;
+			padding: 49px 20px 0;
 			font-size: 1em;
+      line-height:1.5em;
 		}
 		#content > div > div img {
 			padding: 1em;
 		}
+    #content > div > div span {
+      font-size: 1em !important;
+    }
 		#content .breadcrumb {
 			width: 100%;
 			margin: 0;
 			padding: 0;
+      margin-bottom: 6em;
+      line-height: 1.3em;
+      color: #e9e9e9;
 		}
 		#content #contentleft {
 			width: 100%:
@@ -1110,6 +1190,7 @@ img.alignleft {
 		}
 		#content .postarea > p {
 			padding: 0;
+      margin-bottom: 10px;
 		}
 		#content .postarea > p img {
 			padding: 0;
@@ -1117,10 +1198,15 @@ img.alignleft {
 			width: 100%;
 			height: auto;
 		}
-		#content table, #content thead, #content tbody, #content th, #content td, #content tr {
+    #content table.realtable, #content table.realtable thead, #content table.realtable tbody, #content table.realtable th, #content table.realtable td, #content table.realtable tr {
+      width: auto !important;
+      height: auto !important;
+    }
+		#content table:not(.realtable), #content table:not(.realtable) thead, #content table:not(.realtable) tbody, #content table:not(.realtable) th, #content table:not(.realtable) td, #content table:not(.realtable) tr {
 			display: block;
 			width: 100% !important;
 			height: auto !important;
+      padding: 0px;
 		}
 		#content table, #content tr { margin-bottom: 10px; }
 		#content ul { text-align: left; }
@@ -1128,7 +1214,7 @@ img.alignleft {
 			max-width: 100% !important;
 			height: auto;
 		}
-		#content div { max-width: 100% !important; }
+		#content div { max-width: 100% !important; width: 100% !important; }
 		.alignnone {
 			display: block !important;
 			width: auto !important;
@@ -1384,12 +1470,12 @@ img.alignleft {
 			background: #111111;
 		}
 		#footer p {
-			font-size: 1em;
+			font-size: .8em;
 			padding: 1em;
 		}
 		#footer div {
 			text-align: center;
-			font-size: 1em;
+			font-size: .8em;
 			padding-top: 15px;
 			color: white;
 		}
@@ -1515,6 +1601,23 @@ img.alignleft {
 	border-bottom: 1px solid #DDDDDD;
 	display: inline;
 	}
+
+  @media all and (max-width: 50em) {
+    #mobile-menu form {
+      width: 100%;
+      margin: 10px;
+      float: left;
+    }
+    #mobile-menu form input {
+			padding: 15px !important;
+			border-radius: 5px;
+			border: none !important;
+			font-size: 1em !important;
+		}
+    #mobile-menu form input[type="text"] {
+      background: #ffffff !important;
+    }
+  }
 
 /************************************************
 *	Comments									*
@@ -1670,6 +1773,10 @@ img.alignleft {
 	margin: 0px;
 	padding: 0px;
 	}
+
+iframe {
+  max-width: 100%;
+}
 
 	.mobile-only {
 		display: none;
