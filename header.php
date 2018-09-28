@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head profile="http://gmpg.org/xfn/11">
 
@@ -85,7 +85,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 			<span class="headerleft"><a href="<?php echo get_settings('home'); ?>"> </a></span>
 			<input type="text" value="Search this website..." name="s" id="searchbox" onfocus="if (this.value == 'Search this website...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search this website...';}" />
 			<input type="submit" id="searchbutton" value="GO" /></form>
-			<table width="100%"><tr><td><a href="http://www.diversifiedproduct.com/"><font color="#FFFFF"> Diversified Product Development</font></a><br/>
+			<table width="100%"><tr><td><a href="https://www.diversifiedproduct.com/"><font color="#FFFFF"> Diversified Product Development</font></a><br/>
 			1001 Webster Ave.<br/>
 			Waco, TX 76706 <br/>
 			Phone: 254-757-1177<br/>

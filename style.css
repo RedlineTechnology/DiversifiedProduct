@@ -46,7 +46,7 @@ body {
 			padding: 0;
 			font-size: 100%;
 			zoom: 1;
-      background: #8f8f8f url(images/background-mobile.jpg) top center no-repeat;
+      background: #8f8f8f url(images/background-mobile.jpg) top center repeat-x;
 		}
 		#wrap {
 			width: 100%;
@@ -166,6 +166,7 @@ a img {
   -webkit-transition: left .3s ease-out;
   transition: left .3s ease-out;
   float: left;
+  background: #8f8f8f url(images/background.jpg) top center no-repeat;
 }
 #page-wrapper.mobile-menu-open {
   left: 300px;
@@ -189,6 +190,9 @@ a img {
 	#menu-mainmenu {
 		/* display: none !important; */
 	}
+  #page-wrapper {
+    background: none;
+  }
 	.mobilenav, #toggle-menu-container {
 		display: block;
 	}
@@ -515,7 +519,7 @@ a img {
 #nav li a[title="LiftWise"]:after {
 	display: block;
 	content: "";
-	background-image: url( 'http://www.diversifiedproduct.com/wp-content/uploads/2017/05/LiftWiseLogo_WhiteRGB-e1493836490493.png') !important;
+	background-image: url( 'https://www.diversifiedproduct.com/wp-content/uploads/2017/05/LiftWiseLogo_WhiteRGB-e1493836490493.png') !important;
 	background-repeat: no-repeat !important;
 	background-position: center center;
 	width: 100px;
@@ -528,7 +532,7 @@ a img {
 #nav li a[title="LineWise"]:after {
 	display: block;
 	content: "";
-	background-image: url( 'http://www.diversifiedproduct.com/wp-content/uploads/2013/08/LineWiseLogo_menu.png') !important;
+	background-image: url( 'https://www.diversifiedproduct.com/wp-content/uploads/2013/08/LineWiseLogo_menu.png') !important;
 	background-repeat: no-repeat !important;
 	background-position: center center;
 	width: 100px;
@@ -1800,3 +1804,23 @@ iframe {
 			display: block;
 		}
 	}
+
+
+  /* CONTACT FORM */
+  @media all and (max-width: 50em) {
+    .wpcf7 input {
+      border-radius: 5px;
+      border: none;
+      padding: 15px !important;
+    }
+    .wpcf7 textarea {
+      border-radius: 5px;
+      border: none;
+      padding: 15px;
+      width: 100%;
+    }
+    .wpcf7 input[type="submit"] {
+      background-color: #e26d38;
+      color: white;
+    }
+  }
