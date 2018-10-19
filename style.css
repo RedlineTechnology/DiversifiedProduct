@@ -20,7 +20,7 @@ html, body {
 }
 
 body {
-	background: #8f8f8f url(images/background.jpg) top center no-repeat;
+	background: #8f8f8f;
 	/* width: 960px; */
 	color: #000000;
 	font-size: 14px;
@@ -160,6 +160,7 @@ a img {
   padding: 0;
   margin: auto;
   position: relative;
+  height: 100vh;
   width: 100%;
   min-width: 100%;
   left: 0;
@@ -1189,6 +1190,9 @@ img.alignleft {
     #content > div > div span {
       font-size: 1em !important;
     }
+    #bwg_container1_0 #bwg_container2_0 .bwg_title_spun2_0, #bwg_container1_0 #bwg_container2_0 .bwg_ecommerce_spun2_0 {
+      font-size: 16px !important;
+    }
 		#content .breadcrumb {
 			width: 100%;
 			margin: 0;
@@ -1216,17 +1220,35 @@ img.alignleft {
 			width: 100%;
 			height: auto;
 		}
-    #content table.realtable, #content table.realtable thead, #content table.realtable tbody, #content table.realtable th, #content table.realtable td, #content table.realtable tr {
-      width: auto !important;
-      height: auto !important;
-    }
+		#content table, #content tr { margin-bottom: 10px; }
 		#content table:not(.realtable), #content table:not(.realtable) thead, #content table:not(.realtable) tbody, #content table:not(.realtable) th, #content table:not(.realtable) td, #content table:not(.realtable) tr {
 			display: block;
 			width: 100% !important;
 			height: auto !important;
       padding: 0px;
 		}
-		#content table, #content tr { margin-bottom: 10px; }
+    .table-wrapper {
+      overflow-x: scroll;
+    }
+    /* If it's a .realtable or a .realtable inside another table, don't do the full-width thing */
+    #content table:not(.realtable) table.realtable, #content table:not(.realtable) table.realtable thead, #content table:not(.realtable) table.realtable tbody, #content table:not(.realtable) table.realtable th, #content table:not(.realtable) table.realtable td, #content table:not(.realtable) table.realtable tr,
+    #content table.realtable, #content table.realtable thead, #content table.realtable tbody, #content table.realtable th, #content table.realtable td, #content table.realtable tr {
+      width: auto !important;
+      height: auto !important;
+    }
+    #content table:not(.realtable) table.realtable, #content table:not(.realtable) table.realtable tbody,
+    #content table.realtable, #content table.realtable tbody {
+      display: table !important;
+    }
+    #content table:not(.realtable) table.realtable tr,
+    #content table.realtable tr {
+      display: table-row !important;
+    }
+    #content table:not(.realtable) table.realtable td,
+    #content table.realtable td {
+      display: table-cell !important;
+      min-width: 150px;
+    }
 		#content ul { text-align: left; }
 		#content img {
 			max-width: 100% !important;
@@ -1241,13 +1263,16 @@ img.alignleft {
 			width: 100% !important;
 		}
 		#content a.lightbox-enabled { width: 100%; text-align: center; float: left; }
-		.wp-caption p.wp-caption-text { font-size: 1em; line-height: 2em; }
+		.wp-caption p.wp-caption-text { font-size: 1em; line-height: 2em; padding: 0 5px; }
 		.shadow_img { display: none; }
 		#content input {
 			padding: 10px;
 			font-size: 1em;
 			width: 100%;
 		}
+    #content div .wp-caption, #content div .wp-caption div {
+      width: auto !important;
+    }
 	}
 
 /************************************************

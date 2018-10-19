@@ -22,12 +22,6 @@
 <?php wp_enqueue_script("jquery"); ?>
 <?php wp_head(); ?>
 
-<script type="text/javascript">
-     jQuery(document).ready(function($){
-         $("a[rel='lightbox']").colorbox({maxWidth:"95%", maxHeight:"95%"});
-     });
-</script>
-
 <script type="text/javascript"><!--//--><![CDATA[//><!--
 sfHover = function() {
 	if (!document.getElementsByTagName) return false;
