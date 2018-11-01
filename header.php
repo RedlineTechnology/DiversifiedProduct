@@ -57,7 +57,16 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 
 </head>
 
+<style>
+/* DIVERSIFIED SPECIFIC STYLES */
+#nav li a, #nav li a:link, #nav li a:visited {
+    font-size: 1.2em;
+    padding: 12px 10px;
+}
+</style>
+
 <body <?php body_class(); ?>>
+
 <div id="mobile-menu" class="mobilenav">
   <form id="searchform" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
    <input type="text" value="Search this website..." name="s" id="searchbox" onfocus="if (this.value == 'Search this website...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search this website...';}" />
@@ -70,7 +79,7 @@ if (window.attachEvent) window.attachEvent("onload", sfHover);
 <div id="wrap">
 <div id="header">
 
-	<div class="headerleft"><a href="<?php echo get_settings('home'); ?>"><img src="<?php echo get_settings('home'); ?>/wp-content/uploads/2017/04/lwhead.png" border="0"></a></div>
+	<div class="headerleft"><a href="<?php echo get_settings('home'); ?>"><img src="<?php echo get_settings('home'); ?>/wp-content/themes/diversified/images/logo.jpg" border="0"></a></div>
 
 	<!--To define the 468x60 ad, go to your WP dashboard and go to Appearance -> Diversified Product Development Options and enter the ad code.-->
 
